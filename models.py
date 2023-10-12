@@ -34,15 +34,17 @@ class TripletNetwork(nn.Module):
                 self.main.append(nn.MaxPool2d(kernel_size=2, stride=2))
                 self.main.append(nn.ReLU())
 
-        self.main.append(nn.Dropout2d(p=0.5))
+        self.main.append(nn.Dropout(0.2)) # difference from the reference's setting (0.5)
 
         self.main = nn.Sequential(*self.main)
 
+    def get_rep(self, x):
+        return self.main(x).view(-1, 128)
     
     def forward(self, x, pos_x, neg_x):
-        x_rep = self.main(x).view(-1, 128)
-        pos_x_rep = self.main(pos_x).view(-1, 128)
-        neg_x_rep = self.main(neg_x).view(-1, 128)
+        x_rep = self.get_rep(x)
+        pos_x_rep = self.get_rep(pos_x)
+        neg_x_rep = self.get_rep(neg_x)
 
         pos_distance = torch.norm(x_rep - pos_x_rep, p=2, dim=1)
         neg_distance = torch.norm(x_rep - neg_x_rep, p=2, dim=1)
