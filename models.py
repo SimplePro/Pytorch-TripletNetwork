@@ -56,6 +56,10 @@ if __name__ == '__main__':
     triplet_network = TripletNetwork(model="mnist") 
     x = torch.randn((2, 1, 28, 28))
     pos_x = torch.randn((2, 1, 28, 28))
-    neg_x = torch.randn((2, 1, 28, 28))    
+    neg_x = torch.randn((2, 1, 28, 28))
 
     print(triplet_network(x, pos_x, neg_x))
+
+    from torchsummary import summary
+
+    summary(triplet_network.cuda(), input_size=[(1, 28, 28), (1, 28, 28), (1, 28, 28)])
