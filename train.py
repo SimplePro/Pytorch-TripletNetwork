@@ -77,24 +77,6 @@ if __name__ == '__main__':
     best_loss = 1e8
     best_state_dict = None
 
-    def calculate_loss(pos_distance, neg_distance):
-        d_pos = torch.exp(pos_distance) / (torch.exp(pos_distance) + torch.exp(neg_distance))
-        # d_neg = torch.exp(neg_distance) / (torch.exp(pos_distance) + torch.exp(neg_distance))
-
-        # print(d_pos, d_neg)
-
-        # loss = torch.mean(torch.square(d_pos) + torch.square(d_neg - 1))
-        loss = CONST * torch.mean(torch.square(d_pos))
-
-        return loss
-    
-    
-    @torch.no_grad()
-    def save_representation_space(model, dataset, class_n, save_path):
-        class_embedding = visualize_.get_embedding(dataset=dataset, class_n=class_n, model=model)
-        visualize_.save_2d_embedding_space(class_embedding, save_path)
-
-        
     for epoch in range(EPOCHS):
         print("-" * 50 + "EPOCH:", epoch, "-" * 50)
         train_avg_loss = 0
