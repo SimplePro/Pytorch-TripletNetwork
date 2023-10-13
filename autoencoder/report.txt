@@ -1,0 +1,5 @@
+AutoEncoder
+1. Normalization: forces Sigmoid function not to be used.
+2. Sigmoid: makes images not noisy.
+3. padding: is not important factor.
+4. the type of activation function between two consecutive layers: is not important factor.
