@@ -59,7 +59,7 @@ Estimated Total Size (MB): 1840.54
 -----------------------------
 ### Comparing with AutoEncoder's embedding space
 #### Feature Representation Space (by AutoEncoder)
-- Seeing this result, I became to understand what tripletnet's roles of deeplearning is.    
+- Seeing this result, I became to more exactly understand tripletnet's purpose.    
 
 ![epoch_29](https://github.com/SimplePro/Pytorch-TripletNetwork/assets/66504341/5332047e-8e98-4882-aebd-56a494c581b1)
 <div align="center"> AutoEncoder's 2d feature representation space (epoch 29) </div>
