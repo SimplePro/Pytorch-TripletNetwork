@@ -10,7 +10,6 @@ from sklearn.decomposition import PCA
 
 import numpy as np
 
-from models import TripletNetwork
 
 
 DEVICE = "cuda"
@@ -57,6 +56,8 @@ def save_2d_embedding_space(class_embedding, save_path):
 
 if __name__ == '__main__':
 
+    from models import TripletNetwork
+    
     model = TripletNetwork(model="mnist").to(DEVICE)
     model.load_state_dict(torch.load("./triplet_best_state_dict.pt"))
 

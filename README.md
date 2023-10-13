@@ -51,6 +51,24 @@ Params size (MB): 1.35
 Estimated Total Size (MB): 1840.54
 ```
 
-### Feature Representation Space
+#### Feature Representation Space (by TripletNet)
 ![epoch_29](https://github.com/SimplePro/Pytorch-TripletNetwork/assets/66504341/ad56bfe6-db99-447a-915e-207863c64d7a)
-<div align="center"> 2d feature representation space (epoch29) </div>
+<div align="center"> TripletNet's 2d feature representation space (epoch29) </div>
+</br>
+
+-----------------------------
+### Comparing with AutoEncoder's embedding space
+#### Feature Representation Space (by AutoEncoder)
+- Seeing this result, I became to understand what tripletnet's roles of deeplearning is.    
+
+![epoch_29](https://github.com/SimplePro/Pytorch-TripletNetwork/assets/66504341/5332047e-8e98-4882-aebd-56a494c581b1)
+<div align="center"> AutoEncoder's 2d feature representation space (epoch 29) </div>
+
+<br/>
+<br/>
+
+<p align="center">
+<img aling="center" src="https://github.com/SimplePro/Pytorch-TripletNetwork/assets/66504341/88040b97-0007-44ed-a349-2897b3c6c448">
+</p>
+
+<div align="center"> reconstruction images </div>
